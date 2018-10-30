@@ -3,17 +3,27 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { KendoButtonGroup, KendoButtonInstaller, KendoButtonsInstaller } from '@progress/kendo-buttons-vue-wrapper'
-import '@progress/kendo-ui'
+import '@progress/kendo-ui';
+import { KendoButtonGroup, KendoButtonsInstaller } from '@progress/kendo-buttons-vue-wrapper';
+import { KendoGridColumn, KendoGrid, KendoGridInstaller } from '@progress/kendo-grid-vue-wrapper';
+import { KendoDataSource, KendoDataSourceInstaller } from '@progress/kendo-datasource-vue-wrapper';
 
-
-Vue.config.productionTip = false
-Vue.use(KendoButtonsInstaller)
+  
+Vue.config.productionTip = false;
+Vue.use(KendoDataSourceInstaller);
+Vue.use(KendoGridInstaller);
+Vue.use(KendoButtonsInstaller);
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App , KendoButtonGroup}
-})
+  components: {
+    App,
+    KendoButtonGroup,
+    KendoGridColumn,
+    KendoGrid,
+    KendoDataSource
+  }
+});
